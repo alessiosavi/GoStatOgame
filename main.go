@@ -11,8 +11,8 @@ import (
 
 	stringutils "github.com/alessiosavi/GoGPUtils/string"
 
-	"github.com/alessiosavi/OgameStats/datastructure/players"
-	"github.com/alessiosavi/OgameStats/datastructure/score"
+	"github.com/alessiosavi/GoStatOgame/datastructure/players"
+	"github.com/alessiosavi/GoStatOgame/datastructure/score"
 )
 
 const rangePoint = 20 // 20%

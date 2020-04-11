@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/alessiosavi/OgameStats/utils"
+	"github.com/alessiosavi/GoStatOgame/utils"
 )
 
 type Player struct {
