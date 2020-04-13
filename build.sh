@@ -1,3 +1,3 @@
 #!/bin/bash
+go clean ; go build ; strip GoStatOgame ; rm GoStatOgame.zip ;  zip GoStatOgame.zip GoStatOgame
 
-go clean ; go build ; strip -s OgameStats ; zip OgameStats.zip OgameStats

@@ -2,6 +2,7 @@ package score
 
 import (
 	"encoding/xml"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -15,6 +16,7 @@ type Player struct {
 	ID       string `xml:"id,attr"`
 	Score    string `xml:"score,attr"`
 	Ships    string `xml:"ships,attr"`
+	Username string `xml:"username,attr"`
 }
 
 type MilitaryScore struct {
@@ -38,6 +40,15 @@ func LoadMilitaryScore(uni int) (MilitaryScore, error) {
 	}
 	err = xml.Unmarshal(body, &players)
 	return players, err
+}
+
+func (s *MilitaryScore) FilterScoreByID(ID string) (Player, error) {
+	for i := range s.Player {
+		if s.Player[i].ID == ID {
+			return s.Player[i], nil
+		}
+	}
+	return Player{}, errors.New(fmt.Sprintf("unable to find user with ID %s", ID))
 }
 
 func LoadMilitaryScoreLost(url string) (MilitaryScoreLost, error) {

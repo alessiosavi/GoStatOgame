@@ -5,6 +5,8 @@ import (
 	"net/http"
 )
 
+
+
 func ReadBody(resp *http.Response) ([]byte, error) {
 	var body []byte = nil
 	defer resp.Body.Close()
